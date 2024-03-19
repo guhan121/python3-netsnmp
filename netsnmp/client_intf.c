@@ -2359,6 +2359,7 @@ netsnmp_getbulk(PyObject *self, PyObject *args)
         /* propagate error */
         if (verbose)
           printf("error: get: unknown python error");
+        PyErr_Print();
         snmp_free_pdu(pdu);
         goto done;
       }
